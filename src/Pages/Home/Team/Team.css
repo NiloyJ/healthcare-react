@@ -1,0 +1,22 @@
+
+.cardinfo{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(65,9,121,1) 20%, rgba(0,212,255,1) 100%);
+    margin-top: 12%;
+    border: none;
+    height: 30vh;
+}
+
+.card{
+    border: none;
+}
+
+.card-text, .card-title{
+    color: white;
+}
+
+.card-img-top{
+    height: 50vh;
+    width: 50vw;
+    margin: auto;
+    
+}
