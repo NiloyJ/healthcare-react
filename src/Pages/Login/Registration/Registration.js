@@ -6,10 +6,10 @@
 //     const [email, setEmail] = useState('');
 //     const [password, setPassword] = useState('');
 //     const auth = getAuth()
-    
+
 
 //     const handleRegistration = e => {
-        
+
 //         createUserWithEmailAndPassword(auth, email, password)
 //             .then(result => {
 //                 const user = result.user;
@@ -50,8 +50,9 @@
 // export default Registration;
 
 
-import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import initializeAuthentication from '../Firebase/firebase.init';
 
@@ -77,6 +78,15 @@ function App() {
   const handleNameChange = e => {
     setName(e.target.value);
   }
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user)
+      })
+  }
+
   const handleEmailChange = e => {
     setEmail(e.target.value);
   }
@@ -89,20 +99,42 @@ function App() {
     e.preventDefault();
     console.log(email, password);
     if (password.length < 6) {
-      setError('Pleae add atleast 6 letters.')
-      return;
+      setError('password should have 6 character minimum')
+      return
     }
     if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-      setError('Password is needed to have some special character');
+      setError('Password required atleast two upper case');
       return;
     }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        setError('')
+      })
+      .catch(error => {
+        setError(error.message)
+      })
+    
 
-    if (isLogin) {
-      processLogin(email, password);
-    }
-    else {
-      registerNewUser(email, password);
-    }
+
+
+
+    // if (password.length < 6) {
+    //   setError('Pleae add atleast 6 letters.')
+    //   return;
+    // }
+    // if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+    //   setError('Password is needed to have some special character');
+    //   return;
+    // }
+
+    // if (isLogin) {
+    //   processLogin(email, password);
+    // }
+    // else {
+    //   registerNewUser(email, password);
+    // }
 
   }
 
@@ -145,6 +177,7 @@ function App() {
   }
 
   const handleResetPassword = () => {
+
     sendPasswordResetEmail(auth, email)
       .then(result => { })
   }
@@ -152,7 +185,7 @@ function App() {
   return (
     <div className="mx-5">
       <form onSubmit={handleRegistration}>
-        <h3 className="text-primary">Please {isLogin ? 'Login' : 'Register'}</h3>
+        <h3 className="text-primary">Please Register</h3>
         {!isLogin && <div className="row mb-3">
           <label htmlFor="inputName" className="col-sm-2 col-form-label">Name</label>
           <div className="col-sm-10">
@@ -174,10 +207,8 @@ function App() {
         <div className="row mb-3">
           <div className="col-sm-10 offset-sm-2">
             <div className="form-check">
-              <input onChange={toggleLogin} className="form-check-input" type="checkbox" id="gridCheck1" />
-              <label className="form-check-label" htmlFor="gridCheck1">
-                Already Registered?
-              </label>
+              
+              <Link to="/login">Already a member?</Link>
             </div>
           </div>
         </div>
@@ -189,7 +220,6 @@ function App() {
 
       </form>
       <br /><br /><br />
-      <div>--------------------------------</div>
       <br /><br /><br />
     </div>
   );

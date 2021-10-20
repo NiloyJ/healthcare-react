@@ -48,9 +48,7 @@ const Footer = () => {
           
                     <section class="mb-4">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                            eum harum corrupti dicta, aliquam sequi voluptate quas.
+                            we are commited to give you something called more than special
                         </p>
                     </section>
                    

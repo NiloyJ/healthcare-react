@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+Context: This website is made for a healthcare service with a group of expert doctors. It is 24/7 stand by businesss for profit and social welfare in weekends by it's interns and volunteer. Some points behind this creation is mentioned down here
+
+1: Make a connection between patients and expert doctors.
+2: provide healthcare service in exchange for small contribution of money
+3: Make healthcare service profitbale and by implamenting subscription based model 
+4: increasing awareness for mental health
+5: live site: 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
