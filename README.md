@@ -6,7 +6,7 @@ Context: This website is made for a healthcare service with a group of expert do
 2: provide healthcare service in exchange for small contribution of money
 3: Make healthcare service profitbale and by implamenting subscription based model 
 4: increasing awareness for mental health
-5: live site: 
+5: live site: https://healthcare-assignment-252c0.web.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
