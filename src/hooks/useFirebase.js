@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, signInWithPopup, signOut, FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from './../Pages/Login/Firebase/firebase.init'
 initializeAuthentication()
@@ -6,25 +6,25 @@ const useFirebase = () =>{
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth();
-    const facebookProvider = new FacebookAuthProvider();
+    // const facebookProvider = new FacebookAuthProvider();
 
     const signInUsingGoogle = () =>{
         setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
         .then(result =>{
-            setUser(result.user)
+            setUser(result.user);
         })
         .finally(() => setIsLoading(false))
     }
 
-    const handleFacebookSignIn = () =>{
-        signInWithPopup(auth, facebookProvider)
-        .then(result =>{
-            const user = result.user;
-            console.log(result.user)
-        })
-    }
+    // const handleFacebookSignIn = () =>{
+    //     signInWithPopup(auth, facebookProvider)
+    //     .then(result =>{
+    //         const user = result.user;
+    //         console.log(result.user)
+    //     })
+    // }
 
     useEffect( () =>{
        const unsusbcribed =  onAuthStateChanged(auth, user =>{
@@ -52,7 +52,6 @@ const useFirebase = () =>{
         user,
         isLoading,
         signInUsingGoogle,
-        handleFacebookSignIn,
         logOut
     }
 }

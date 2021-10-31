@@ -31,7 +31,7 @@ const teams = [
 const Teams = () => {
     return (
         <div id="teams" className="team-container">
-            <h2 style={{color: 'blueviolet', marginTop:'5%', fontSize:'4em', fontWeight:'bold'}}>Introducing our experts</h2>
+            <h2 style={{color: 'red', marginTop:'5%', fontSize:'4em', fontWeight:'bold'}}>Introducing our experts</h2>
             <div>
                 {
                     teams.map(team => <Team key={team._id} name={team.name} team={team}></Team>)

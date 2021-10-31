@@ -2,12 +2,13 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Services from '../Services/Services';
 import Teams from './Teams/Teams';
-import health1 from '../../images/health1.jpg'
-import health2 from '../../images/health2.jpg'
-import health3 from '../../images/health3.jpg'
+import banner1 from '../../images/banner1.jpg'
+import banner2 from '../../images/banner2.jfif'
+import banner3 from '../../images/banner3.jpg'
 import Footer from '../Shared/Footer/Footer';
 import Pricing from '../Pricing/Pricing';
 import Contact from '../Contact/Contact';
+
 const Home = () => {
     return (
         <div id="home">
@@ -15,7 +16,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={health1}
+                        src={banner1}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -25,7 +26,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={health2}
+                        src={banner1}
                         alt="Second slide"
                     />
 
@@ -36,7 +37,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={health3}
+                        src={banner3}
                         alt="Third slide"
                     />
 

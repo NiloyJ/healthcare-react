@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import notfound from '../../images/404Not.jpg'
+import notfound from '../../images/404Not.png'
 const NotFound = () => {
     return (
         <div>

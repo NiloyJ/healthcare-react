@@ -13,6 +13,10 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Registration from './Pages/Login/Registration/Registration';
 import Footer from './Pages/Shared/Footer/Footer';
 import Pricing from './Pages/Pricing/Pricing';
+import AddUser from './Pages/AddUser/AddUser';
+import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import ManagerOrders from './Pages/ManageOrders/ManagerOrders';
 
 function App() {
   return (
@@ -41,6 +45,18 @@ function App() {
             </Route>
             <Route path="/pricing">
               <Pricing></Pricing>
+            </Route>
+            <Route path="/addservice">
+              <AddUser></AddUser>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            <Route path="/myorders">
+              <ManagerOrders></ManagerOrders>
+            </Route>
+            <Route path="/update/:productId">
+              <UpdateProduct></UpdateProduct>
             </Route>
             <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>

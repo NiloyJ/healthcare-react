@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAqwjvSkiLqvacZB7R4Pxb6Vm59QRRksJ0",
-    authDomain: "healthcare-assignment-252c0.firebaseapp.com",
-    projectId: "healthcare-assignment-252c0",
-    storageBucket: "healthcare-assignment-252c0.appspot.com",
-    messagingSenderId: "1096259120575",
-    appId: "1:1096259120575:web:b3996304a5673abf47450a"
-  };
-  
-  export default firebaseConfig;
+  apiKey: "AIzaSyD2NCau-CporD29caVRfLhrfRfFGGOAOB0",
+  authDomain: "travelport-assignment.firebaseapp.com",
+  projectId: "travelport-assignment",
+  storageBucket: "travelport-assignment.appspot.com",
+  messagingSenderId: "38293868361",
+  appId: "1:38293868361:web:c1d3891ead89256c239498"
+};
+
+export default firebaseConfig;
